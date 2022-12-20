@@ -17,10 +17,9 @@ export class ViewFarmerComponent {
  }
   ngOnInit() {
     this.id = this.route.snapshot.paramMap.get('id');
-    console.log(this.id);
+    
     this.farmerService.getFarmer(this.id).subscribe(
       (result:any) => {
-        console.log('request', result);
         this.farmer = result.data;
       }
     )

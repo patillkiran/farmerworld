@@ -45,7 +45,6 @@ export class FarmerListComponent {
     if(response){
       await this.farmerService.deleteFarmer(id).subscribe(
         (result:any) => {
-          console.log('request', result);
           if(result.status == 'success'){
             this.toastr.success('Farmer deleted successfully!')
             this.getFarmerData();

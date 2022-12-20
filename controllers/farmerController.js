@@ -17,7 +17,6 @@ exports.getAllFarmers = async (req, res) => {
 }
 exports.createFarmer = async (req, res) => {
     try {
-        console.log('body', req.body);
         const newFarmer = await Farmer.create(req.body);
         return res.status(201).json({
             status: 'success',
@@ -48,8 +47,7 @@ exports.getFarmer = async (req, res) => {
 }
 exports.updateFarmer = async (req, res) => {
     try {
-        req.body.updatedDate = new Date();
-        console.log('req.body', req.body);        
+        req.body.updatedDate = new Date();  
         const farmer = await Farmer.findByIdAndUpdate(req.params.farmerid, req.body, {
             new: true,
             runValidators: true

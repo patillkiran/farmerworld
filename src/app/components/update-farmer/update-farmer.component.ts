@@ -24,7 +24,7 @@ export class UpdateFarmerComponent {
  }
  ngOnInit() {
     this.id = this.route.snapshot.paramMap.get('id');
-    console.log(this.id);
+    
     this.createForm()
   }
   createForm() {
@@ -45,7 +45,6 @@ export class UpdateFarmerComponent {
  getValues(){   
   this.farmerService.getFarmer(this.id).subscribe(
     (result:any) => {
-      console.log('request', result);
       let obj = {};
       if(result.data.name){
         obj["name"] = result.data.name;
@@ -93,7 +92,6 @@ export class UpdateFarmerComponent {
       }else {
         obj["numberOfChildren"] = '';
       }
-      console.log('obj', obj)
       this.angForm.setValue(obj);
     }
   )
@@ -129,17 +127,14 @@ export class UpdateFarmerComponent {
   }
  }
  async updateFarmer(){
-   console.log(this.base64uri);
    if(this.base64uri){
     this.angForm.value.photo = this.base64uri;
    } else {
      delete this.angForm.value.photo;
    }
-   console.log(this.angForm.value);
    const data = this.angForm.value;
    await this.farmerService.updateFarmer(this.id, data).subscribe(
     (result:any) => {
-      console.log('request', result);
       const url = 'farmers';
       this.router.navigate([url]);
       
