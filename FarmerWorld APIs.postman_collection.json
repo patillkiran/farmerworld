@@ -1,0 +1,140 @@
+{
+	"info": {
+		"_postman_id": "ee19103c-bcbc-43e8-8a9d-efb6a2fbf744",
+		"name": "FarmerWorld APIs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create Farmer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Sameer Kikani\",\r\n    \"age\" : 45,\r\n    \"gender\": \"Male\",\r\n    \"married\": true\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:3000/api/createFarmer",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"createFarmer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllFarmers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "127.0.0.1:3000/api/getAllFarmers",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"getAllFarmers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get farmer by ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "127.0.0.1:3000/api/getFarmer/63982d5abadc3a4e4cdedf5c",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"getFarmer",
+						"63982d5abadc3a4e4cdedf5c"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Farmer",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"age\" : 65\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:3000/api/updateFarmer/63983c0a2297cf58307ce059",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"updateFarmer",
+						"63983c0a2297cf58307ce059"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Farmer",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "127.0.0.1:3000/api/deleteFarmer/63983c0a2297cf58307ce059",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"deleteFarmer",
+						"63983c0a2297cf58307ce059"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
